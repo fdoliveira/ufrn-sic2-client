@@ -1,0 +1,20 @@
+<div class="card-container">
+  <md-card>
+    <md-card-title>LOGIN</md-card-title>
+    <md-card-content>
+      <form [ngFormModel]="loginForm" (submit)="onLogin()">
+        <md-input required type="text" placeholder="Usuário" [(ngModel)]='login.name'></md-input>
+        <br>
+        <md-input required type="password" placeholder="Senha" [(ngModel)]='login.password'></md-input>
+
+        <md-card-actions align="end">
+          <button md-raised-button color="primary" type="submit" [disabled]="!loginForm.valid">Entrar</button>
+        </md-card-actions>
+      </form>
+
+      <!--<md-checkbox (change)="toggleAll($event)">
+                Manter-se conectado
+            </md-checkbox>-->
+    </md-card-content>
+  </md-card>
+</div>
