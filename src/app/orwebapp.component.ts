@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
+
 import { AboutComponent } from './+about';
 import { IToken } from './+login/shared';
 import { LoginComponent } from './+login';
 import { WorkspaceComponent } from './+workspace';
 import { ContatoComponent } from './+contato';
-import { Router, Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
 
 import {MdButton} from '@angular2-material/button';
 import {MdToolbar} from '@angular2-material/toolbar';

@@ -8,7 +8,7 @@ import { MdCard } from '@angular2-material/card/';
 import { MdInput } from '@angular2-material/input';
 import { MdButton } from '@angular2-material/button';
 import { MdCheckbox } from '@angular2-material/checkbox';
-import {MdIcon} from '@angular2-material/icon';
+import { MdIcon } from '@angular2-material/icon';
 
 import { IContato } from './shared/contato.model';
 import { ContatoService } from './shared/contato.service';
@@ -26,7 +26,7 @@ import { ContatoService } from './shared/contato.service';
     MdInput,
     MdIcon
   ],
-  providers: [ContatoService ]
+  providers: [ ContatoService ]
 })
 export class ContatoComponent implements OnInit {
 
@@ -43,9 +43,9 @@ export class ContatoComponent implements OnInit {
     ngOnInit(): void {
         this.contato = <IContato>{};
 
-        this._contatoService.getContatos()
+        this._contatoService.getEntitys()
             .subscribe(
-            contatos => this.contatos = contatos,
+            contatos => this.contatos = <IContato[]>contatos,
             error =>  this.errorMessage = <any>error);
     }
     
@@ -53,13 +53,13 @@ export class ContatoComponent implements OnInit {
         if (this.contato.id == null)
             this._contatoService.insert(this.contato)
                     .subscribe(
-                        contato => this.contato = contato,
+                        contato => this.contato = <IContato>contato,
                         error => this.errorMessage = <any>error,
                         () => this.ngOnInit());
         else
             this._contatoService.update(this.contato)
                     .subscribe(
-                        contato => this.contato = contato,
+                        contato => this.contato = <IContato>contato,
                         error => this.errorMessage = <any>error,
                         () => this.ngOnInit());
         
@@ -72,9 +72,9 @@ export class ContatoComponent implements OnInit {
     }
     
     getContato(id: string) {
-        this._contatoService.getContato(id)
+        this._contatoService.getEntity(id)
             .subscribe(
-            contato => this.contato = contato,
+            contato => this.contato = <IContato>contato,
             error => this.errorMessage = <any>error);
     }
 

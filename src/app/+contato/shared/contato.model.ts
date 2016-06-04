@@ -1,6 +1,7 @@
 /* Defines the Contato entity */
-export interface IContato {
-    id: string;
+import { IEntity } from './entity.model'; 
+
+export interface IContato extends IEntity {
     nome: string;
     cpf: string;
 }
