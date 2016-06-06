@@ -6,7 +6,7 @@ import { Validators } from '@angular/common';
 import { FORM_DIRECTIVES, FormBuilder, ControlGroup, Control, AbstractControl } from '@angular/common';
 
 import {ILogin} from './shared/login.model';
-import {IToken} from './shared/token.model';
+import {IToken} from '../common/token.model';
 import {LoginService} from './shared/login.service';
 
 import { MdCard } from '@angular2-material/card/';

@@ -1,5 +1,5 @@
 /* Defines the Contato entity */
-import { IEntity } from './entity.model'; 
+import { IEntity } from '../../common/entity.model'; 
 
 export interface IContato extends IEntity {
     nome: string;

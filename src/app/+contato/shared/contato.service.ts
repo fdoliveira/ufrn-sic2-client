@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { Http, Response, Headers } from '@angular/http';
 
 import { IContato } from './contato.model';
-import { EntityService } from './entity.service';
+import { EntityService } from '../../common/entity.service';
 
 @Injectable()
 export class ContatoService extends EntityService {

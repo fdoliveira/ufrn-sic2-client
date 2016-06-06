@@ -3,15 +3,13 @@ import { Observable } from 'rxjs/Observable';
 import { Http, Response, Headers } from '@angular/http';
 
 import { IEntity } from './entity.model';
-import { IContato } from './contato.model';
-import { IToken } from '../../+login/shared';
+import { IToken } from './token.model';
 
 @Injectable()
 export class EntityService {
     protected _url;
 
     constructor(protected _http: Http) {
-
     }
 
     protected getHeader(): Headers {
@@ -24,7 +22,7 @@ export class EntityService {
         return _headers;
     }
 
-    private handleError(error: Response) {
+    protected handleError(error: Response) {
         // in a real world app, we may send the server to some remote logging infrastructure
         // instead of just logging it to the console
         console.error(error);
