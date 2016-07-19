@@ -13,9 +13,20 @@ export class LoginService extends EntityService {
         super(_http);
         this._url = 'http://localhost:5000/tokens';
     }
+    
+    protected getHeader(): Headers {
+        var _headers = new Headers();
+
+        _headers.append('Content-Type', 'application/json');
+
+        return _headers;
+    }
 
     login(login: ILogin): Observable<IToken> {
-        return this._http.post(this._url, JSON.stringify(login), this.getHeader)
+         var _headers = new Headers();
+        _headers.append('Content-Type', 'application/json');
+
+        return this._http.post(this._url, JSON.stringify(login), { headers: this.getHeader() })
             .map((response: Response) => <IToken>response.json().token)
             .do(data => console.log('All: ' + JSON.stringify(data)))
             .catch(this.handleError);        
